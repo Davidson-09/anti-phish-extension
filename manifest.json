@@ -1,0 +1,14 @@
+{
+    "name": "anti-phish extension",
+    "description": "avoid phishing scams",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting", "http://*/", "https://*/", "desktopCapture", "tabs", "downloads", "*://*/*"],
+    "host_permissions": ["http://*/", "https://*/","activeTab", "<all_urls>", "downloads", "*://*/*"],
+    "action": {
+        "default_popup": "popup.html"
+    }
+  }
