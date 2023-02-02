@@ -9,15 +9,6 @@ const trustedSites = [
 ]
 
 chrome.tabs.onUpdated.addListener((tabId, tab, changeInfo) => {
-    // if (tab.url && tab.url.includes("youtube.com/watch")) {
-    //   const queryParameters = tab.url.split("?")[1];
-    //   const urlParameters = new URLSearchParams(queryParameters);
-  
-    //   chrome.tabs.sendMessage(tabId, {
-    //     type: "NEW",
-    //     videoId: urlParameters.get("v"),
-    //   });
-    // }
     if (changeInfo.url){
         if (siteTrusted(changeInfo.url)){
             console.log(changeInfo.url, 'site is trusted')
@@ -35,7 +26,7 @@ chrome.tabs.onUpdated.addListener((tabId, tab, changeInfo) => {
                 // You can add that image HTML5 canvas, or Element.
                 console.log('the screenshot', image)
                 // make http request to model server
-                // makeRequest(image)
+                makeRequest(image)
              });
         }
     }
